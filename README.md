@@ -48,9 +48,10 @@ Example using https://github.com/AArnott/Nerdbank.GitVersioning
   ...
   ```
  
-   It seems there is a `$(_NuGetTargetFallbackMoniker)` that is passed as additional option to the `TargetMonikers` parameter.
-   Although there is no official documentation on this, it looks promising since it is seems to be used as a possible workaround for 'UAP' projects.
+  It seems there is a `$(_NuGetTargetFallbackMoniker)` that is passed as additional option to the `TargetMonikers` parameter.
+  Although there is no official documentation on this, it looks promising since it is seems to be used as a possible workaround for 'UAP' projects.
 
+  That means we can use the same mechanism to target 'native,Version=v0.0':
   ```
   <PropertyGroup>
     <_NuGetTargetFallbackMoniker>$(_NuGetTargetFallbackMoniker);native,Version=v0.0</_NuGetTargetFallbackMoniker>
