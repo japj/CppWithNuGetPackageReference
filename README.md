@@ -8,7 +8,7 @@ However MSBuild NuGet integration is done in a generic way, it is just that the 
 TODO: add links to official docs for comparison + CentralPackageVersions
 
 ## How
-Example using https://github.com/AArnott/Nerdbank.GitVersioning 
+Example using https://github.com/AArnott/Nerdbank.GitVersioning dependency purely during development.
 
 ### Directory.Build.props
   We store MSBuild settings in the solution root folder file Directory.Build.props
@@ -17,7 +17,9 @@ Example using https://github.com/AArnott/Nerdbank.GitVersioning
 
   ```
   <ItemGroup>
-    <PackageReference Include="Nerdbank.GitVersioning" Version="2.3.38"/>
+    <PackageReference Include="Nerdbank.GitVersioning"  Version="2.3.38">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   ```
 
