@@ -151,3 +151,33 @@ TODO: rewrite text
     ========== Finished ==========
   ```
 
+* Building end result: Success, MSBuild targets `GetBuildVersion` and `GenerateNativeVersionInfo` from `Nerdbank.GitVersioning` are called during build
+  and the executable is correctly stamped with version information.
+  ```
+    1>------ Rebuild All started: Project: CppWithNuGetPackageReference, Configuration: Debug x64 ------
+    1>Build started 26-1-2019 21:46:43.
+    1>Target GetBuildVersion:
+    1>  Building version 0.0.5.61746 from commit 32f18dae142924cf3d180b5a5cca001cda3a9a67
+    1>Target GenerateNativeVersionInfo:
+    1>  Copying file from "x64\Debug\\CppWithNuGetPackageReference.Version.rc.new" to "x64\Debug\\CppWithNuGetPackageReference.Version.rc".
+    1>Target PrepareForBuild:
+    1>  Creating directory "D:\GitHub\CppWithNuGetPackageReference\x64\Debug\".
+    1>  Creating directory "x64\Debug\CppWithN.F88D9F1D.tlog\".
+    1>Target InitializeBuildStatus:
+    1>  Creating "x64\Debug\CppWithN.F88D9F1D.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+    1>Target ClCompile:
+    1>  pch.cpp
+    1>  CppWithNuGetPackageReference.cpp
+    1>Target Link:
+    1>  CppWithNuGetPackageReference.vcxproj -> D:\GitHub\CppWithNuGetPackageReference\x64\Debug\CppWithNuGetPackageReference.exe
+    1>Target FinalizeBuildStatus:
+    1>  Deleting file "x64\Debug\CppWithN.F88D9F1D.tlog\unsuccessfulbuild".
+    1>  Touching "x64\Debug\CppWithN.F88D9F1D.tlog\CppWithNuGetPackageReference.lastbuildstate".
+    1>
+    1>Build succeeded.
+    1>    0 Warning(s)
+    1>    0 Error(s)
+    1>
+    1>Time Elapsed 00:00:02.56
+    ========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========
+  ```
