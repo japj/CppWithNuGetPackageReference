@@ -5,13 +5,20 @@ Example Cpp project that uses NuGet PackageReference (instead of packages.config
 
 VisualStudio (for C++ vcxproj) only supports packages.config by default.
 However MSBuild NuGet integration is done in a generic way, it is just that the VS NuGet integration only supports packages.config.
-TODO: add links to official docs for comparison + CentralPackageVersions
+
+More information on the benefits of using PackageReferences can be found at the Official Microsoft NuGet documentation: 
+[Benefits of using PackageReference](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference#benefits-of-using-packagereference).
+
+The [Microsoft.Build.CentralPackageVersions](https://github.com/Microsoft/MSBuildSdks/tree/master/src/CentralPackageVersions)
+MSBuild project SDK allows project tree owners to manage their NuGet package versions in one place. 
+Stock NuGet requires that each project contain a version. You can also use MSBuild properties to manage versions.
 
 ## How
 Example using https://github.com/AArnott/Nerdbank.GitVersioning dependency purely during development.
 
 ### Directory.Build.props
-  We store MSBuild settings in the solution root folder file Directory.Build.props
+  We store MSBuild settings in the solution root folder file `Directory.Build.props` since this is an offical (and very clean) way to 
+[customize your build](https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2017#directorybuildprops-and-directorybuildtargets).
 
 ### Add NuGet PackageReference
 
@@ -62,7 +69,6 @@ Example using https://github.com/AArnott/Nerdbank.GitVersioning dependency purel
 
 
 ## Technical Details
-TODO: rewrite text
 
 * VS UI "Restore NuGet Packages" does not restore based on PackageReference
 
