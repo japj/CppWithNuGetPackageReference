@@ -5,4 +5,9 @@
   <ItemGroup>
     <PackageReference Include="Nerdbank.GitVersioning"  Version="2.3.38" />
   </ItemGroup>
+
+  <!-- enable NuGet TargetMonikers fallback to native -->
+  <PropertyGroup>
+    <_NuGetTargetFallbackMoniker>$(_NuGetTargetFallbackMoniker);native,Version=v0.0</_NuGetTargetFallbackMoniker>
+  </PropertyGroup>
 </Project>
